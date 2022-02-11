@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#BF540B"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textViewCategories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="29dp"
+        android:background="@color/purple_500"
+        android:backgroundTint="@color/dark_orange"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/categories"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/cream"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonMountains"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="invisible" />
+
+    <Button
+        android:id="@+id/buttonSurf"
+        android:layout_width="150dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="29dp"
+        android:backgroundTint="@color/light_orange"
+        android:text="@string/surf"
+        android:textColor="#BF360C"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonPhoto" />
+
+    <Button
+        android:id="@+id/buttonBinary"
+        android:layout_width="150dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/light_orange"
+        android:text="@string/binary"
+        android:textColor="#BF360C"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewCorrectN"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSurf" />
+
+    <Button
+        android:id="@+id/buttonMountains"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="@color/light_orange"
+        android:text="@string/mountain"
+        android:textColor="#BF360C"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/buttonPhoto"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCategories" />
+
+    <Button
+        android:id="@+id/buttonClear"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/light_orange"
+        android:text="@string/clear"
+        android:textColor="#BF360C"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewIncorrectN"
+        app:layout_constraintStart_toEndOf="@+id/buttonBinary"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMovies"
+        tools:visibility="invisible" />
+
+    <Button
+        android:id="@+id/buttonMovies"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="5dp"
+        android:backgroundTint="@color/light_orange"
+        android:text="@string/movies"
+        android:textColor="#BF360C"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/buttonSurf"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMountains" />
+
+    <Button
+        android:id="@+id/buttonPhoto"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="@color/light_orange"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/photo"
+        android:textColor="#BF360C"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCategories" />
+
+    <TextView
+        android:id="@+id/textViewIncorrect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="60dp"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/incorrect"
+        android:textColor="#FFFDE7"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonRestart"
+        app:layout_constraintStart_toEndOf="@+id/textViewCorrect" />
+
+    <TextView
+        android:id="@+id/textViewIncorrectN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="200dp"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/_0"
+        android:textColor="@color/cream"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewIncorrect"
+        app:layout_constraintEnd_toStartOf="@+id/buttonOption3"
+        app:layout_constraintStart_toEndOf="@+id/textViewCorrectN"
+        app:layout_constraintTop_toBottomOf="@+id/buttonClear" />
+
+    <TextView
+        android:id="@+id/textViewCorrect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="57dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="60dp"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/correct"
+        android:textColor="#FFFDE7"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textViewIncorrect"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewCorrectN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/_0"
+        android:textColor="@color/cream"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewCorrect"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonBinary" />
+
+    <TextView
+        android:id="@+id/textViewQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="45dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/question"
+        android:textColor="@color/cream"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonOption2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.857"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/buttonRestart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="110dp"
+        android:layout_marginBottom="131dp"
+        android:backgroundTint="@color/cream"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/restart"
+        android:textColor="#833000"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textViewQuestion"
+        app:layout_constraintTop_toBottomOf="@+id/buttonClear" />
+
+    <Button
+        android:id="@+id/buttonOption4"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="81dp"
+        android:backgroundTint="@color/medium_orange"
+        android:text="@string/option4"
+        android:textColor="#B71C1C"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonOption3"
+        app:layout_constraintTop_toBottomOf="@+id/buttonOption2" />
+
+    <Button
+        android:id="@+id/buttonOption2"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/medium_orange"
+        android:text="@string/option2"
+        android:textColor="#B71C1C"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonOption1"
+        app:layout_constraintTop_toBottomOf="@+id/textViewQuestion" />
+
+    <Button
+        android:id="@+id/buttonOption1"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/medium_orange"
+        android:text="@string/option1"
+        android:textColor="#B71C1C"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/buttonOption2"
+        app:layout_constraintStart_toEndOf="@+id/buttonMountains"
+        app:layout_constraintTop_toBottomOf="@+id/textViewQuestion" />
+
+    <Button
+        android:id="@+id/buttonOption3"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="81dp"
+        android:backgroundTint="@color/medium_orange"
+        android:text="@string/option3"
+        android:textColor="#B71C1C"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonOption4"
+        app:layout_constraintStart_toEndOf="@+id/buttonClear"
+        app:layout_constraintTop_toBottomOf="@+id/buttonOption1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

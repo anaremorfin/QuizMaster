@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Quiz</string>
+    <string name="option2">Option2</string>
+    <string name="option1">Option1</string>
+    <string name="option4">Option4</string>
+    <string name="option3">Option3</string>
+    <string name="_0">0</string>
+    <string name="question">Question???</string>
+    <string name="binary">Binary</string>
+    <string name="clear">Clear</string>
+    <string name="restart">Restart</string>
+    <string name="incorrect">Incorrect</string>
+    <string name="correct">Correct</string>
+    <string name="categories">Categories</string>
+    <string name="movies">Movies</string>
+    <string name="mountain">Mountain</string>
+    <string name="photo">Photo</string>
+    <string name="surf">Surf</string>
+</resources>
