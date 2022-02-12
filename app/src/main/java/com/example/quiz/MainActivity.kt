@@ -9,6 +9,8 @@ import android.widget.Button
 import android.widget.TextView
 //import androidx.lifecycle.ViewModelProvider
 
+//import androidx.lifecycle.ViewModelProvider
+
 private const val TAG="MainActivity"
 
 class MainActivity : AppCompatActivity() {
@@ -39,6 +41,9 @@ class MainActivity : AppCompatActivity() {
     */
 
     private val modeloQuiz = ModeloQuiz()
+    //val provider : ViewModelProvider = ViewModelProvider(this)
+    //val quizViewModel = provider.get(QuizViewModel::class.java)
+
     //val provider : ViewModelProvider = ViewModelProvider(this)
     //val quizViewModel = provider.get(QuizViewModel::class.java)
 
