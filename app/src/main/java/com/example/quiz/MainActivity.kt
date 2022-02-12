@@ -27,6 +27,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var incorrectScore : TextView
     private lateinit var photoB : Button
 
+    private var correctScore4display = 0
+    private var incorrectScore4display = 0
+
     /*Text remains the same
     No function, just text:
     textViewCorrect
@@ -67,18 +70,22 @@ class MainActivity : AppCompatActivity() {
             var randomNumber = numbers.random()
             this.option1Button.text = modeloQuiz.getListAnswersPhoto()[randomNumber]
             this.option1Button.setBackgroundColor(Color.parseColor("#FFFE9E45"))
+            option1Button.isClickable = true
             numbers.remove(randomNumber)
             randomNumber = numbers.random()
             this.option2Button.text = modeloQuiz.getListAnswersPhoto()[randomNumber]
             this.option2Button.setBackgroundColor(Color.parseColor("#FFFE9E45"))
+            option2Button.isClickable = true
             numbers.remove(randomNumber)
             randomNumber = numbers.random()
             this.option3Button.text = modeloQuiz.getListAnswersPhoto()[randomNumber]
             this.option3Button.setBackgroundColor(Color.parseColor("#FFFE9E45"))
+            option3Button.isClickable = true
             numbers.remove(randomNumber)
             randomNumber = numbers.random()
             this.option4Button.text = modeloQuiz.getListAnswersPhoto()[randomNumber]
             this.option4Button.setBackgroundColor(Color.parseColor("#FFFE9E45"))
+            option4Button.isClickable = true
         }
 
         Log.d(TAG,"En onCreate()")
@@ -87,10 +94,17 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     fun verifyAnswer(optionButton: View){
         val selectedOption : Button = optionButton as Button
+        option1Button.isClickable = false
+        option2Button.isClickable = false
+        option3Button.isClickable = false
+        option4Button.isClickable = false
+
         if(selectedOption.text == modeloQuiz.getListAnswersPhoto()[0])
         {
             selectedOption.setBackgroundColor(Color.parseColor("#FFBFE1A4"))
             selectedOption.text = "That's right!"
+            correctScore4display += 1
+            correctScore.text = (correctScore4display).toString()
             val toastCorrect = Toast.makeText(applicationContext, "You are correct!!!", Toast.LENGTH_LONG)
             toastCorrect.show()
         }
@@ -98,6 +112,8 @@ class MainActivity : AppCompatActivity() {
         {
             selectedOption.setBackgroundColor(Color.parseColor("#FFFFAA95"))
             selectedOption.text = "Oh no..."
+            incorrectScore4display += 1
+            incorrectScore.text = (incorrectScore4display).toString()
             val toastIncorrect = Toast.makeText(applicationContext, "Incorrect", Toast.LENGTH_LONG)
             toastIncorrect.show()
             if(this.option1Button.text == modeloQuiz.getListAnswersPhoto()[0])
@@ -118,6 +134,5 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
 }
 
