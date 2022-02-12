@@ -1,5 +1,6 @@
 package com.example.quiz
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +8,8 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
+
 //import androidx.lifecycle.ViewModelProvider
 
 //import androidx.lifecycle.ViewModelProvider
@@ -44,9 +47,6 @@ class MainActivity : AppCompatActivity() {
     //val provider : ViewModelProvider = ViewModelProvider(this)
     //val quizViewModel = provider.get(QuizViewModel::class.java)
 
-    //val provider : ViewModelProvider = ViewModelProvider(this)
-    //val quizViewModel = provider.get(QuizViewModel::class.java)
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
         incorrectScore = findViewById(R.id.textViewIncorrectN)
         photoB = findViewById(R.id.buttonPhoto)
 
-        @Suppress("UNUSED_PARAMETER")
+        //@Suppress("UNUSED_PARAMETER")
 
         photoB.setOnClickListener {
             this.questionTextView.text = modeloQuiz.questionPhoto()
@@ -84,15 +84,22 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG,"En onCreate()")
     }
 
+    @SuppressLint("SetTextI18n")
     fun verifyAnswer(optionButton: View){
         val selectedOption : Button = optionButton as Button
         if(selectedOption.text == modeloQuiz.getListAnswersPhoto()[0])
         {
             selectedOption.setBackgroundColor(Color.parseColor("#FFBFE1A4"))
+            selectedOption.text = "That's right!"
+            val toastCorrect = Toast.makeText(applicationContext, "You are correct!!!", Toast.LENGTH_LONG)
+            toastCorrect.show()
         }
         else
         {
             selectedOption.setBackgroundColor(Color.parseColor("#FFFFAA95"))
+            selectedOption.text = "Oh no..."
+            val toastIncorrect = Toast.makeText(applicationContext, "Incorrect", Toast.LENGTH_LONG)
+            toastIncorrect.show()
             if(this.option1Button.text == modeloQuiz.getListAnswersPhoto()[0])
             {
                 option1Button.setBackgroundColor(Color.parseColor("#FFBFE1A4"))
