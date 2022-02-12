@@ -26,6 +26,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var correctScore : TextView
     private lateinit var incorrectScore : TextView
     private lateinit var photoB : Button
+    private lateinit var surfB : Button
+    private lateinit var mountainsB : Button
+    private lateinit var moviesB : Button
+    private lateinit var binaryB : Button
+    private lateinit var restartB : Button
 
     private var correctScore4display = 0
     private var incorrectScore4display = 0
@@ -35,16 +40,7 @@ class MainActivity : AppCompatActivity() {
     textViewCorrect
     textViewIncorrect
     textViewCategories
-    buttonClear
-
-    With function:
-    buttonRestart
-    buttonPhoto
-    buttonSurf
-    buttonBinary
-    buttonMountains
-    buttonMovies
-    */
+    buttonClear*/
 
     private val modeloQuiz = ModeloQuiz()
     //val provider : ViewModelProvider = ViewModelProvider(this)
@@ -61,6 +57,11 @@ class MainActivity : AppCompatActivity() {
         correctScore = findViewById(R.id.textViewCorrectN)
         incorrectScore = findViewById(R.id.textViewIncorrectN)
         photoB = findViewById(R.id.buttonPhoto)
+        surfB = findViewById(R.id.buttonSurf)
+        mountainsB = findViewById(R.id.buttonMountains)
+        moviesB = findViewById(R.id.buttonMovies)
+        binaryB = findViewById(R.id.buttonBinary)
+        restartB = findViewById(R.id.buttonRestart)
 
         //@Suppress("UNUSED_PARAMETER")
 
@@ -86,6 +87,13 @@ class MainActivity : AppCompatActivity() {
             this.option4Button.text = modeloQuiz.getListAnswersPhoto()[randomNumber]
             this.option4Button.setBackgroundColor(Color.parseColor("#FFFE9E45"))
             option4Button.isClickable = true
+        }
+
+        restartB.setOnClickListener{
+            correctScore4display=0
+            incorrectScore4display=0
+            correctScore.text = (correctScore4display).toString()
+            incorrectScore.text = (incorrectScore4display).toString()
         }
 
         Log.d(TAG,"En onCreate()")
