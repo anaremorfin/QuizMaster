@@ -83,11 +83,27 @@ class MainActivity : AppCompatActivity() {
         val selectedOption : Button = optionButton as Button
         if(selectedOption.text == modeloQuiz.getListAnswersPhoto()[0])
         {
-            selectedOption.setBackgroundColor(Color.GREEN)
+            selectedOption.setBackgroundColor(Color.parseColor("#FFBFE1A4"))
         }
         else
         {
-            selectedOption.setBackgroundColor(Color.RED)
+            selectedOption.setBackgroundColor(Color.parseColor("#FFFFAA95"))
+            if(this.option1Button.text == modeloQuiz.getListAnswersPhoto()[0])
+            {
+                option1Button.setBackgroundColor(Color.parseColor("#FFBFE1A4"))
+            }
+            if(this.option2Button.text == modeloQuiz.getListAnswersPhoto()[0])
+            {
+                option2Button.setBackgroundColor(Color.parseColor("#FFBFE1A4"))
+            }
+            if(this.option3Button.text == modeloQuiz.getListAnswersPhoto()[0])
+            {
+                option3Button.setBackgroundColor(Color.parseColor("#FFBFE1A4"))
+            }
+            if(this.option4Button.text == modeloQuiz.getListAnswersPhoto()[0])
+            {
+                option4Button.setBackgroundColor(Color.parseColor("#FFBFE1A4"))
+            }
         }
     }
 
