@@ -229,6 +229,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    //Disables the categories buttons to avoid the user skipping questions
     private fun disableCategories(){
         photoB.isClickable = false
         surfB.isClickable = false
@@ -236,11 +237,12 @@ class MainActivity : AppCompatActivity() {
         mountainsB.isClickable = false
         binaryB.isClickable = false
     }
-
+    //Compares the answer selected with the correct answer
     @SuppressLint("SetTextI18n")
     fun verifyAnswer(optionButton: View)
     {
         val selectedOption: Button = optionButton as Button
+        //Option buttons disabled which means user cannot change the answer
         option1Button.isClickable = false
         option2Button.isClickable = false
         option3Button.isClickable = false
@@ -305,6 +307,7 @@ class MainActivity : AppCompatActivity() {
                 answerIsWrongBinary(optionButton)
             }
         }
+        //After answer is verified/shown buttons are clickable once again
         photoB.isClickable = true
         surfB.isClickable = true
         moviesB.isClickable = true
@@ -312,6 +315,7 @@ class MainActivity : AppCompatActivity() {
         binaryB.isClickable = true
     }
 
+    //Changes background color and text when the answer is right, as well as showing a toast.
     @SuppressLint("SetTextI18n")
     fun answerIsRight(optionButton: View) {
         val selectedOption: Button = optionButton as Button
@@ -323,6 +327,7 @@ class MainActivity : AppCompatActivity() {
         toastCorrect.show()
     }
 
+    //Changes background color and text when the answer is wrong, as well as showing a toast.
     @SuppressLint("SetTextI18n")
     fun answerIsWrongPhoto(optionButton: View) {
         val selectedOption: Button = optionButton as Button
@@ -332,6 +337,7 @@ class MainActivity : AppCompatActivity() {
         incorrectScore.text = (incorrectScore4display).toString()
         val toastIncorrect = Toast.makeText(applicationContext, "Incorrect", Toast.LENGTH_LONG)
         toastIncorrect.show()
+        //Compares the buttons with the correct answer to show the right answer to the user
         if(this.option1Button.text == modelQuiz.getListAnswersPhoto()[0])
         {
             option1Button.setBackgroundColor(Color.parseColor("#FFBFE1A4"))
@@ -349,7 +355,7 @@ class MainActivity : AppCompatActivity() {
             option4Button.setBackgroundColor(Color.parseColor("#FFBFE1A4"))
         }
     }
-
+    //Changes background color and text when the answer is wrong, as well as showing a toast.
     @SuppressLint("SetTextI18n")
     fun answerIsWrongSurf(optionButton: View) {
         val selectedOption: Button = optionButton as Button
@@ -359,6 +365,7 @@ class MainActivity : AppCompatActivity() {
         incorrectScore.text = (incorrectScore4display).toString()
         val toastIncorrect = Toast.makeText(applicationContext, "Incorrect", Toast.LENGTH_LONG)
         toastIncorrect.show()
+        //Compares the buttons with the correct answer to show the right answer to the user
         if(this.option1Button.text == modelQuiz.getListAnswersSurf()[0])
         {
             option1Button.setBackgroundColor(Color.parseColor("#FFBFE1A4"))
@@ -376,7 +383,7 @@ class MainActivity : AppCompatActivity() {
             option4Button.setBackgroundColor(Color.parseColor("#FFBFE1A4"))
         }
     }
-
+    //Changes background color and text when the answer is wrong, as well as showing a toast.
     @SuppressLint("SetTextI18n")
     fun answerIsWrongMountains(optionButton: View) {
         val selectedOption: Button = optionButton as Button
@@ -386,6 +393,7 @@ class MainActivity : AppCompatActivity() {
         incorrectScore.text = (incorrectScore4display).toString()
         val toastIncorrect = Toast.makeText(applicationContext, "Incorrect", Toast.LENGTH_LONG)
         toastIncorrect.show()
+        //Compares the buttons with the correct answer to show the right answer to the user
         if(this.option1Button.text == modelQuiz.getListAnswersMountains()[0])
         {
             option1Button.setBackgroundColor(Color.parseColor("#FFBFE1A4"))
@@ -403,7 +411,7 @@ class MainActivity : AppCompatActivity() {
             option4Button.setBackgroundColor(Color.parseColor("#FFBFE1A4"))
         }
     }
-
+    //Changes background color and text when the answer is wrong, as well as showing a toast.
     @SuppressLint("SetTextI18n")
     fun answerIsWrongMovies(optionButton: View) {
         val selectedOption: Button = optionButton as Button
@@ -413,6 +421,7 @@ class MainActivity : AppCompatActivity() {
         incorrectScore.text = (incorrectScore4display).toString()
         val toastIncorrect = Toast.makeText(applicationContext, "Incorrect", Toast.LENGTH_LONG)
         toastIncorrect.show()
+        //Compares the buttons with the correct answer to show the right answer to the user
         if(this.option1Button.text == modelQuiz.getListAnswersMovies()[0])
         {
             option1Button.setBackgroundColor(Color.parseColor("#FFBFE1A4"))
@@ -430,7 +439,7 @@ class MainActivity : AppCompatActivity() {
             option4Button.setBackgroundColor(Color.parseColor("#FFBFE1A4"))
         }
     }
-
+    //Changes background color and text when the answer is wrong, as well as showing a toast.
     @SuppressLint("SetTextI18n")
     fun answerIsWrongBinary(optionButton: View) {
         val selectedOption: Button = optionButton as Button
@@ -440,6 +449,7 @@ class MainActivity : AppCompatActivity() {
         incorrectScore.text = (incorrectScore4display).toString()
         val toastIncorrect = Toast.makeText(applicationContext, "Incorrect", Toast.LENGTH_LONG)
         toastIncorrect.show()
+        //Compares the buttons with the correct answer to show the right answer to the user
         if(this.option1Button.text == modelQuiz.getListAnswersBinary()[0])
         {
             option1Button.setBackgroundColor(Color.parseColor("#FFBFE1A4"))
@@ -457,7 +467,7 @@ class MainActivity : AppCompatActivity() {
             option4Button.setBackgroundColor(Color.parseColor("#FFBFE1A4"))
         }
     }
-
+    //Saves the Instance of the following elements and their values
     override fun onSaveInstanceState(outState: Bundle)
     {
         super.onSaveInstanceState(outState)
@@ -469,7 +479,7 @@ class MainActivity : AppCompatActivity() {
         outState.putString("scoreC", correctScore.text as String)
         outState.putString("scoreI", incorrectScore.text as String)
     }
-
+//Restores the values of the Saved Instances
     override fun onRestoreInstanceState(savedInstanceState: Bundle)
     {
         super.onRestoreInstanceState(savedInstanceState)

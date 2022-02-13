@@ -65,7 +65,7 @@ class ModelQuiz {
     private val answersBinary5: List<String> = listOf("Bit", "Byte", "Word", "Pixel")
     private val answersBinary : List<List<String>> = listOf(answersBinary1,answersBinary2,answersBinary3,answersBinary4,answersBinary5)
 
-    //Functions Photo
+    //Functions Photo returns N question
     fun questionPhoto() : String{
         val randomNumber = numbersPhoto.random() //Selects a random order from mutable list
         indexQuestion = randomNumber
@@ -83,12 +83,13 @@ class ModelQuiz {
         return questionsPhoto[randomNumber]
     }
 
+    //Returns the answer N of question N
     fun getListAnswersPhoto() : List<String>
     {
         return answersPhotos[indexQuestion] //Returns the answer for the question displayed
     }
 
-    //Functions Surf
+    //Functions Surf returns N question
     fun questionSurf() : String{
         val randomNumber = numbersSurf.random() //Selects a random order from mutable list
         indexQuestion = randomNumber
@@ -105,13 +106,13 @@ class ModelQuiz {
         }
         return questionsSurf[randomNumber]
     }
-
+    //Returns the answer N of question N
     fun getListAnswersSurf() : List<String>
     {
         return answersSurf[indexQuestion]
     }
 
-    //Functions Mountains
+    //Functions Mountains returns N question
     fun questionMountains() : String{
         val randomNumber = numbersMountains.random() //Selects a random order from mutable list
         indexQuestion = randomNumber
@@ -128,13 +129,13 @@ class ModelQuiz {
         }
         return questionsMountain[randomNumber]
     }
-
+    //Returns the answer N of question N
     fun getListAnswersMountains() : List<String>
     {
         return answersMountains[indexQuestion]
     }
 
-    //Functions Movies
+    //Functions Movies returns N question
     fun questionMovies() : String{
         val randomNumber = numbersMovies.random() //Selects a random order from mutable list
         indexQuestion = randomNumber
@@ -151,13 +152,13 @@ class ModelQuiz {
         }
         return questionsMovies[randomNumber]
     }
-
+    //Returns the answer N of question N
     fun getListAnswersMovies() : List<String>
     {
         return answersMovies[indexQuestion]
     }
 
-    //Functions Binary
+    //Functions Binary returns N question
     fun questionBinary() : String{
         val randomNumber = numbersBinary.random() //Selects a random order from mutable list
         indexQuestion = randomNumber
@@ -174,12 +175,11 @@ class ModelQuiz {
         }
         return questionsBinary[randomNumber]
     }
-
+    //Returns the answer N of question N
     fun getListAnswersBinary() : List<String>
     {
         return answersBinary[indexQuestion]
     }
-
 
 }
 
