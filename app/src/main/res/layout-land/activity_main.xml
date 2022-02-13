@@ -173,25 +173,25 @@
         android:id="@+id/textViewQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="183dp"
         android:layout_marginBottom="45dp"
         android:fontFamily="sans-serif-medium"
         android:text="@string/question"
         android:textColor="@color/cream"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonOption2"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonOption1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.857"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toEndOf="@+id/textViewCategories"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonRestart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        android:layout_marginEnd="110dp"
+        android:layout_marginEnd="50dp"
         android:layout_marginBottom="131dp"
         android:backgroundTint="@color/cream"
         android:fontFamily="sans-serif-medium"
@@ -199,7 +199,7 @@
         android:textColor="#833000"
         android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textViewQuestion"
+        app:layout_constraintEnd_toStartOf="@+id/buttonOption1"
         app:layout_constraintTop_toBottomOf="@+id/buttonClear" />
 
     <Button
@@ -210,13 +210,15 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="81dp"
         android:backgroundTint="@color/medium_orange"
+        android:onClick="verifyAnswer"
         android:text="@string/option4"
         android:textColor="#B71C1C"
-        android:textSize="24sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/buttonOption3"
-        app:layout_constraintTop_toBottomOf="@+id/buttonOption2" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonOption2"
+        tools:ignore="UsingOnClickInXml" />
 
     <Button
         android:id="@+id/buttonOption2"
@@ -225,12 +227,14 @@
         android:layout_marginTop="45dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="@color/medium_orange"
+        android:onClick="verifyAnswer"
         android:text="@string/option2"
         android:textColor="#B71C1C"
-        android:textSize="24sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/buttonOption1"
-        app:layout_constraintTop_toBottomOf="@+id/textViewQuestion" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewQuestion"
+        tools:ignore="UsingOnClickInXml" />
 
     <Button
         android:id="@+id/buttonOption1"
@@ -240,28 +244,32 @@
         android:layout_marginTop="45dp"
         android:layout_marginEnd="20dp"
         android:backgroundTint="@color/medium_orange"
+        android:onClick="verifyAnswer"
         android:text="@string/option1"
         android:textColor="#B71C1C"
-        android:textSize="24sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/buttonOption2"
         app:layout_constraintStart_toEndOf="@+id/buttonMountains"
-        app:layout_constraintTop_toBottomOf="@+id/textViewQuestion" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewQuestion"
+        tools:ignore="UsingOnClickInXml" />
 
     <Button
         android:id="@+id/buttonOption3"
         android:layout_width="150dp"
         android:layout_height="100dp"
-        android:layout_marginStart="61dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="81dp"
         android:backgroundTint="@color/medium_orange"
+        android:onClick="verifyAnswer"
         android:text="@string/option3"
         android:textColor="#B71C1C"
-        android:textSize="24sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonOption4"
-        app:layout_constraintStart_toEndOf="@+id/buttonClear"
-        app:layout_constraintTop_toBottomOf="@+id/buttonOption1" />
+        app:layout_constraintStart_toEndOf="@+id/buttonRestart"
+        app:layout_constraintTop_toBottomOf="@+id/buttonOption1"
+        tools:ignore="UsingOnClickInXml" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
