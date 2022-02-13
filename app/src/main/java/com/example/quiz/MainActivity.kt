@@ -321,6 +321,7 @@ class MainActivity : AppCompatActivity() {
         val selectedOption: Button = optionButton as Button
         selectedOption.setBackgroundColor(Color.parseColor("#FFBFE1A4"))
         selectedOption.text = "That's right!"
+        correctScore4display = Integer.parseInt(correctScore.text as String)
         correctScore4display += 1
         correctScore.text = (correctScore4display).toString()
         val toastCorrect = Toast.makeText(applicationContext, "You are correct!!!", Toast.LENGTH_LONG)
@@ -333,6 +334,7 @@ class MainActivity : AppCompatActivity() {
         val selectedOption: Button = optionButton as Button
         selectedOption.setBackgroundColor(Color.parseColor("#FFFFAA95"))
         selectedOption.text = "Oh no..."
+        incorrectScore4display = Integer.parseInt(incorrectScore.text as String)
         incorrectScore4display += 1
         incorrectScore.text = (incorrectScore4display).toString()
         val toastIncorrect = Toast.makeText(applicationContext, "Incorrect", Toast.LENGTH_LONG)
@@ -361,6 +363,7 @@ class MainActivity : AppCompatActivity() {
         val selectedOption: Button = optionButton as Button
         selectedOption.setBackgroundColor(Color.parseColor("#FFFFAA95"))
         selectedOption.text = "Oh no..."
+        incorrectScore4display = Integer.parseInt(incorrectScore.text as String)
         incorrectScore4display += 1
         incorrectScore.text = (incorrectScore4display).toString()
         val toastIncorrect = Toast.makeText(applicationContext, "Incorrect", Toast.LENGTH_LONG)
@@ -389,6 +392,7 @@ class MainActivity : AppCompatActivity() {
         val selectedOption: Button = optionButton as Button
         selectedOption.setBackgroundColor(Color.parseColor("#FFFFAA95"))
         selectedOption.text = "Oh no..."
+        incorrectScore4display = Integer.parseInt(incorrectScore.text as String)
         incorrectScore4display += 1
         incorrectScore.text = (incorrectScore4display).toString()
         val toastIncorrect = Toast.makeText(applicationContext, "Incorrect", Toast.LENGTH_LONG)
@@ -417,6 +421,7 @@ class MainActivity : AppCompatActivity() {
         val selectedOption: Button = optionButton as Button
         selectedOption.setBackgroundColor(Color.parseColor("#FFFFAA95"))
         selectedOption.text = "Oh no..."
+        incorrectScore4display = Integer.parseInt(incorrectScore.text as String)
         incorrectScore4display += 1
         incorrectScore.text = (incorrectScore4display).toString()
         val toastIncorrect = Toast.makeText(applicationContext, "Incorrect", Toast.LENGTH_LONG)
@@ -445,6 +450,7 @@ class MainActivity : AppCompatActivity() {
         val selectedOption: Button = optionButton as Button
         selectedOption.setBackgroundColor(Color.parseColor("#FFFFAA95"))
         selectedOption.text = "Oh no..."
+        incorrectScore4display = Integer.parseInt(incorrectScore.text as String)
         incorrectScore4display += 1
         incorrectScore.text = (incorrectScore4display).toString()
         val toastIncorrect = Toast.makeText(applicationContext, "Incorrect", Toast.LENGTH_LONG)
@@ -490,6 +496,20 @@ class MainActivity : AppCompatActivity() {
         option4Button.text = savedInstanceState.getString("option4")
         correctScore.text = savedInstanceState.getString("scoreC")
         incorrectScore.text = savedInstanceState.getString("scoreI")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        print("en pausa")
+        //putString("scoreC", correctScore.text as String)
+        //putString("scoreI", incorrectScore.text as String)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        print("en alto")
+        //putString("scoreC", correctScore.text as String)
+        //putString("scoreI", incorrectScore.text as String)
     }
 }
 
