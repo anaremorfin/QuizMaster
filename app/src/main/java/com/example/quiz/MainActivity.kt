@@ -65,8 +65,20 @@ class MainActivity : AppCompatActivity() {
 
         //@Suppress("UNUSED_PARAMETER")
 
+        option1Button.isClickable = false
+        option2Button.isClickable = false
+        option3Button.isClickable = false
+        option4Button.isClickable = false
+
         photoB.setOnClickListener {
             this.questionTextView.text = modeloQuiz.questionPhoto()
+
+            photoB.isClickable = false
+            surfB.isClickable = false
+            moviesB.isClickable = false
+            mountainsB.isClickable = false
+            binaryB.isClickable = false
+
             val numbers = mutableListOf(0,1,2,3)
             var randomNumber = numbers.random()
             this.option1Button.text = modeloQuiz.getListAnswersPhoto()[randomNumber]
@@ -141,6 +153,11 @@ class MainActivity : AppCompatActivity() {
                 option4Button.setBackgroundColor(Color.parseColor("#FFBFE1A4"))
             }
         }
+        photoB.isClickable = true
+        surfB.isClickable = true
+        moviesB.isClickable = true
+        mountainsB.isClickable = true
+        binaryB.isClickable = true
     }
 }
 

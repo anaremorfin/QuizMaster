@@ -2,6 +2,8 @@ package com.example.quiz
 
 class ModeloQuiz {
     private var indexQuestion = 0
+    private val numbers = mutableListOf(0,1,2,3,4)
+    private var count = 0
 
     //Photos category
     private val questionsPhoto : List<String> = listOf("DSLR stands for", "Advantage of shooting manual?", "What is a pixel?", "Best ISO for the no noise?", "Shutter speed for action shots?")
@@ -50,16 +52,25 @@ class ModeloQuiz {
 
     //Functions Photo
     fun questionPhoto() : String{
-        val numbers = 0..4
+        //val numbers = 0..4
         val randomNumber = numbers.random()
         indexQuestion = randomNumber
+        numbers.remove(randomNumber)
+        count+=1
+        if (count == 5){
+            numbers.add(0)
+            numbers.add(1)
+            numbers.add(2)
+            numbers.add(3)
+            numbers.add(4)
+            count = 0
+        }
         return questionsPhoto[randomNumber]
     }
+
     fun getListAnswersPhoto() : List<String>
     {
         return answersPhotos[indexQuestion]
     }
-
-
 }
 
